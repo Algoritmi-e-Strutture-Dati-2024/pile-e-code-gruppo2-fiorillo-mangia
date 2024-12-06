@@ -1,0 +1,42 @@
+int main() {
+    std::cout << "Test della Pila (LIFO)" << std::endl;
+    Pila<int> pila;
+    pila.push(19);
+    pila.push(26);
+    pila.push(34);
+
+    std::cout << "Top della pila: " << pila.top() << std::endl; 
+    std::cout << "lunghezza della pila: " << pila.size() << std::endl; 
+
+    std::cout << "Pop dalla pila: " << pila.pop() << std::endl;  
+    std::cout << "lunghezza dopo pop: " << pila.size() << std::endl; 
+
+    std::cout << "Top dopo pop: " << pila.top() << std::endl;  
+
+    std::cout << "Pop dalla pila: " << pila.pop() << std::endl;  
+    std::cout << "Pop dalla pila: " << pila.pop() << std::endl;  
+
+    std::cout << "La pila e' vuota? " << (pila.isEmpty() ? "Si" : "No") << std::endl;  
+
+    std::cout << "\n";
+
+    
+    std::cout << "Test della Coda (FIFO)" << std::endl;
+    Coda<int> coda;
+    coda.enqueue(19);
+    coda.enqueue(26);
+    coda.enqueue(34);
+
+    std::cout << "Front della coda: " << coda.front() << std::endl;  
+    std::cout << "lunghezza della coda: " << coda.size() << std::endl;    
+
+    std::cout << "togli dalla coda: " << coda.dequeue() << std::endl;  
+    std::cout << "lunghezza dopo dequeue: " << coda.size() << std::endl;  
+
+    std::cout << "Front dopo dequeue: " << coda.front() << std::endl;  
+
+    std::cout << "togli dalla coda: " << coda.dequeue() << std::endl;  
+    std::cout << "togli dalla coda: " << coda.dequeue() << std::endl; 
+
+    std::cout << "La coda e' vuota? " << (coda.isEmpty() ? "Si" : "No") << std::endl;  
+}
