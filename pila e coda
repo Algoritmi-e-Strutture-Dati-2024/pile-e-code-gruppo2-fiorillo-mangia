@@ -1,0 +1,84 @@
+template <typename T>
+class Pila {
+  private:
+    ListaPuntatori<T> lista;   
+
+  public:
+
+    Pila() {}
+
+    
+    bool isEmpty() const {
+        return lista.listavuota();
+    }
+
+
+    int size() const {
+        return lista.lunghezza();
+    }
+
+    void push(T elem) {
+        lista.inslista(elem, 1);  
+    }
+
+  
+    T pop() {
+        if (isEmpty()) {
+            std::cout << "pila vuota!" << std::endl;
+            return T(); 
+        }
+        T valore = lista.leggilista(1); 
+        lista.canclista(1); 
+        return valore;
+    }
+
+    T top() const {
+        if (isEmpty()) {
+            std::cout << "pila vuota!" << std::endl;
+            return T();  
+        }
+        return lista.leggilista(1);  
+    }
+};
+
+template <typename T>
+class Coda {
+  private:
+    ListaPuntatori<T> lista;  
+
+  public:
+
+    Coda() {}
+
+
+    T isEmpty() const {
+        return lista.listavuota();
+    }
+
+
+    T size() const {
+        return lista.lunghezza();
+    }
+
+ 
+    T enqueue(T elem) {
+        lista.inslista(elem, lista.lunghezza()+1);   
+    }
+
+   
+    T dequeue() {
+    	if (isEmpty()) {
+            std::cout << "coda vuota!" << std::endl;
+            return T(); 
+        }
+        T holdValue = lista.leggilista(1);
+        lista.canclista(1);
+        return holdValue;
+           
+    }
+
+   
+    T front() const {
+        return lista.leggilista(); 
+    }
+};
